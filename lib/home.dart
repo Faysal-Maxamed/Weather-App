@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wheather_app/themes.dart';
+import 'package:wheather_app/weather_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -35,8 +36,7 @@ class HomeScreen extends StatelessWidget {
                   text: " Forecast",
                   style: GoogleFonts.poppins(
                     fontSize: 65,
-                    color:
-                        yellowcol, 
+                    color: yellowcol,
                   ),
                 ),
               ],
@@ -45,19 +45,23 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 45,
           ),
-          Container(
-            height: 50,
-            width: 200,
-            decoration: BoxDecoration(
-              color: yellowcol,
-              borderRadius: BorderRadius.circular(40),
-            ),
-            child: Center(
-              child: Text(
-                "Get started",
-                style: GoogleFonts.openSans(
-                  fontSize: 22,
-                  color: textcolor,
+          GestureDetector(
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => WeatherScreen())),
+            child: Container(
+              height: 50,
+              width: 200,
+              decoration: BoxDecoration(
+                color: yellowcol,
+                borderRadius: BorderRadius.circular(40),
+              ),
+              child: Center(
+                child: Text(
+                  "Get started",
+                  style: GoogleFonts.openSans(
+                    fontSize: 22,
+                    color: textcolor,
+                  ),
                 ),
               ),
             ),
